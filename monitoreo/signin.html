@@ -36,7 +36,7 @@
 
                     <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
 
-                    <form id="loginform" class="form-horizontal" role="form">
+                    <form id="loginform" class="form-horizontal" role="form" action="sensores.html" >
 
                         <div style="margin-bottom: 25px" class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -62,10 +62,9 @@
                             <div style="margin-top:10px" class="form-group">
                                 <!-- Button -->
 
-                                <div class="col-sm-12 controls">
-                                  <a id="btn-login" href="#" class="btn btn-success">Login  </a>
-                                  <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>
-
+                                <div class="col-sm-12 controls">                                  
+                                   <button id="btn-login" class="btn btn-success" onclick="return validar()">Login</button>                                                                                                                
+                                   <button id="btn-fblogin" class="btn btn-primary" onclick="return validar()">Login with Facebook</button>                                   
                                 </div>
                             </div>
 
@@ -161,6 +160,24 @@
      </div>
 </div>
 
+    <script>
+        function validar(){
+          if(document.getElementById("login-username").value =="admin")
+          {
+             if(document.getElementById("login-password").value =="admin");
+             else
+             {
+                //puede añadirse mensaje de que el usuario es incorrecto
+                return false;
+             }
+          }
+          else
+          {
+            //puede añadirse mensaje de que el usuario es incorrecto
+            return false;
+          }               
+        }
+    </script>
 
   </body>
 </html>
